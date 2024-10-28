@@ -1,30 +1,33 @@
-// mouse enter
+// Generado 1era seccion
 function* pageMaker() {
     let index = 1;
     while (index <= 5){ 
         yield index++;} 
-  }
+  };
   
 let gen = pageMaker();
 
+// Generado 2da seccion
+
 function* pageMaker2() {
     let index = 6;
-    while (index <= 11){ 
+    while (index < 11){ 
         yield index++;} 
-  }
+  };
   
   
 let genSecond = pageMaker2();
-console.log(genSecond.next().value)
+
+// Generado 3era seccion
 
 function* pageMaker3() {
     let index = 12;
-    while (index <= 18){ 
+    while (index < 18){ 
         yield index++;} 
-  }
+  };
   
 let genThird = pageMaker3();
-console.log(genThird.next().value)
+
 
   
         
@@ -36,7 +39,7 @@ async function getData(page){
 
         if(!response.ok){
             if(response.status ===404){
-                alert("Limite de Personajes");
+                alert("Limite de Personajes Generados");
                 throw new Error ("Recurso no encontrado");
             }else{
                 throw new Error ("Error en peticion"+ response.status)
@@ -82,10 +85,10 @@ function inyectar(characterData, page){
                     <img src="assets/style/icons/darth-vader-svgrepo-com.svg" alt="">
                 </div>
                 <div class="m-1">
-                    <h5>Nombre: ${name}</h5>
+                    <h5> ${name}</h5>
                     <div class="d-flex justify-content-between ">
-                        <p>Altura: ${height}</p>
-                        <p>Peso: ${mass}</p>
+                        <p class="me-1">Estatura: ${height} cm. </p>
+                        <p> Peso: ${mass} kg.</p>
                     </div>
                 </div>
             </div>
@@ -99,10 +102,10 @@ function inyectar(characterData, page){
                     <img src="assets/style/icons/scifi-starwars-boba-fett-svgrepo-com.svg" alt="">
                 </div>
                 <div class="m-1">
-                    <h5>Nombre: ${name}</h5>
+                    <h5> ${name}</h5>
                     <div class="d-flex justify-content-between ">
-                        <p>Altura: ${height}</p>
-                        <p>Peso: ${mass}</p>
+                        <p class="me-1">Estatura: ${height} cm.</p>
+                        <p> Peso: ${mass} kg.</p>
                     </div>
                 </div>
             </div>
@@ -118,10 +121,10 @@ function inyectar(characterData, page){
                     <img src="assets/style/icons/chewbacca-svgrepo-com.svg" alt="">
                 </div>
                 <div class="m-1">
-                    <h5>Nombre: ${name}</h5>
+                    <h5> ${name}</h5>
                     <div class="d-flex justify-content-between ">
-                        <p>Altura: ${height}</p>
-                        <p>Peso: ${mass}</p>
+                        <p class="me-1">Estatura: ${height} cm.</p>
+                        <p> Peso: ${mass} kg.</p>
                     </div>
                 </div>
             </div>
@@ -129,13 +132,13 @@ function inyectar(characterData, page){
             
                 
 
-        if(page <=5){
+        if(page <= 5){
             inyectar1.insertAdjacentHTML('beforeend',infoHtml1);
 
-        }else if (page >5 && page <=11 ){
+        }else if (page >5 && page < 11 ){
             inyectar2.insertAdjacentHTML('beforeend',infoHtml2);
 
-        }else if (page >11 && page <=18 ){
+        }else if (page >11 && page < 18 ){
             inyectar3.insertAdjacentHTML('beforeend',infoHtml3);
         }
                 
